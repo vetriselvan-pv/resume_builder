@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Download, Copy, FileText, Check, FileCode } from 'lucide-react';
-import { GeneratedPackage } from '../types';
+import { GeneratedPackage } from '../../types';
 
 interface ExportModalProps {
   isOpen: boolean;

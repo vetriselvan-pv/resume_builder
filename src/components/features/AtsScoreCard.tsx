@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Target, CheckCircle2, AlertTriangle, HelpCircle, Lightbulb, Search, ArrowUpRight } from 'lucide-react';
-import { ATSReport } from '../types';
+import { ATSReport } from '../../types';
 
 interface AtsScoreCardProps {
   report: ATSReport;

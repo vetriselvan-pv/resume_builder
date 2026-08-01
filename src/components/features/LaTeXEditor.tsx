@@ -147,11 +147,11 @@ export const LaTeXEditor: React.FC<LaTeXEditorProps> = ({
       </div>
 
       {/* Editor & Preview Display Grid */}
-      <div className="min-h-[550px] max-h-[750px] grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="h-[600px] lg:h-[750px] grid grid-cols-1 lg:grid-cols-2 gap-4 overflow-scroll">
         
         {/* Left Side: LaTeX Source Code Editor */}
         {(viewMode === 'split' || viewMode === 'code') && (
-          <div className={`flex flex-col bg-white rounded-xl border border-slate-200 overflow-hidden ${
+          <div className={`flex flex-col bg-white rounded-xl border border-slate-200 overflow-hidden h-full ${
             viewMode === 'code' ? 'col-span-full' : ''
           }`}>
             <div className="bg-slate-50 px-3.5 py-2 border-b border-slate-200 flex items-center justify-between text-xs text-slate-500">
@@ -182,7 +182,7 @@ export const LaTeXEditor: React.FC<LaTeXEditorProps> = ({
 
         {/* Right Side: Paper Document Simulation Preview */}
         {(viewMode === 'split' || viewMode === 'preview') && (
-          <div className={`${viewMode === 'preview' ? 'col-span-full' : ''}`}>
+          <div className={`h-full ${viewMode === 'preview' ? 'col-span-full' : ''}`}>
             <VisualResumePreview
               latexCode={currentCode}
               candidateName="Vetriselvan Panneerselvam"

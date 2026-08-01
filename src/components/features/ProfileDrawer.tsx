@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, ShieldCheck, Briefcase, Award, Code, BookOpen, MapPin, Globe, Clock, Layers, Check } from 'lucide-react';
-import { Profile } from '../types';
-import { VETRISELVAN_PROFILE } from '../data/defaultProfile';
+import { Profile } from '../../types';
+import { VETRISELVAN_PROFILE } from '../../data/defaultProfile';
 
 interface ProfileDrawerProps {
   isOpen: boolean;

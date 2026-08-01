@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from './components/Header';
-import { ProfileDrawer } from './components/ProfileDrawer';
-import { JobInputSection } from './components/JobInputSection';
-import { AtsScoreCard } from './components/AtsScoreCard';
-import { LaTeXEditor } from './components/LaTeXEditor';
-import { OptionalOutputsSection } from './components/OptionalOutputsSection';
-import { Toast } from './components/Toast';
-import { ExportModal } from './components/ExportModal';
-import { VETRISELVAN_PROFILE, SAMPLE_JOB_DESCRIPTIONS } from './data/defaultProfile';
+import { Header } from './components/layout/Header';
+import { ProfileDrawer } from './components/features/ProfileDrawer';
+import { JobInputSection } from './components/features/JobInputSection';
+import { AtsScoreCard } from './components/features/AtsScoreCard';
+import { LaTeXEditor } from './components/features/LaTeXEditor';
+import { OptionalOutputsSection } from './components/features/OptionalOutputsSection';
+import { Toast } from './components/ui/Toast';
+import { ExportModal } from './components/ui/ExportModal';
+import { VETRISELVAN_PROFILE } from './data/defaultProfile';
 import { Profile, GeneratedPackage } from './types';
 
 export default function App() {
@@ -19,14 +19,6 @@ export default function App() {
 
   const [packageData, setPackageData] = useState<GeneratedPackage | null>(null);
 
-  // Generate initial package on app start
-  useEffect(() => {
-    generatePackage(
-      "Stripe",
-      "Senior Full Stack Engineer - Financial Products",
-      SAMPLE_JOB_DESCRIPTIONS[0].description
-    );
-  }, []);
 
   const generatePackage = async (company: string, position: string, jobDescription: string) => {
     setIsLoading(true);
@@ -58,7 +50,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased pb-12 selection:bg-indigo-500/20 selection:text-indigo-900">
+    <div className="min-h-screen bg-[#fafafa] text-[#1a1a1c] pb-12">
       
       {/* Top Header Navigation */}
       <Header
@@ -79,10 +71,10 @@ export default function App() {
 
         {/* Loading Overlay State */}
         {isLoading && (
-          <div className="bg-white/90 border border-slate-200 p-8 rounded-2xl text-center space-y-3 shadow-2xl animate-pulse">
-            <div className="w-10 h-10 border-4 border-indigo-500/30 border-t-indigo-600 rounded-full animate-spin mx-auto" />
-            <h3 className="text-base font-bold text-slate-900">Analyzing Job Description & Generating Career Package...</h3>
-            <p className="text-xs text-slate-500 max-w-lg mx-auto">
+          <div className="ai-card p-10 text-center space-y-4 animate-pulse flex flex-col items-center justify-center">
+            <div className="w-8 h-8 border-2 border-zinc-200 border-t-zinc-900 rounded-full animate-spin" />
+            <h3 className="text-[13px] font-medium text-[#1a1a1c]">Analyzing Job Description & Generating Career Package...</h3>
+            <p className="text-[11px] text-[#737373] max-w-lg mx-auto">
               Extracting required skills, mapping Vetriselvan's FPX Library & Pulse projects, enforcing Action Verb + Tech + Impact bullet rules, and writing compile-ready LaTeX.
             </p>
           </div>

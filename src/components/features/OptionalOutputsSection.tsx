@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Linkedin, Clock, Sparkles, BookOpen, Copy, Check, ChevronDown, ChevronUp, MessageSquareText } from 'lucide-react';
-import { STARStory, InterviewQuestion } from '../types';
+import { STARStory, InterviewQuestion } from '../../types';
 
 interface OptionalOutputsSectionProps {
   recruiterEmail: string;
