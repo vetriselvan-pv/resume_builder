@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { generateCareerPackage } from '../controllers/careerPackageController';
+import { generateCareerPackage } from '../controllers/careerPackageController.js';
 
 const router = Router();
 

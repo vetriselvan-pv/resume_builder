@@ -1,6 +1,6 @@
 import express from "express";
-import careerPackageRoutes from "./routes/careerPackageRoutes";
-import { env } from "./config/env";
+import careerPackageRoutes from "./routes/careerPackageRoutes.js";
+import { env } from "./config/env.js";
 import { success } from "zod";
 
 const app = express();
@@ -18,7 +18,7 @@ app.post("/api/login", (req, res) => {
   }
 });
 
-app.get("/version", (req, res) => {
+app.get("/api/version", (req, res) => {
   return res.json({
     success: true,
     message: "career application ai studio",
