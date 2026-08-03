@@ -3,9 +3,9 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import careerPackageRoutes from "./routes/careerPackageRoutes";
 import { env } from "./config/env";
+import { success } from "zod";
 
-
-const app = express(); 
+const app = express();
 
 app.use(express.json({ limit: "10mb" }));
 
@@ -18,6 +18,14 @@ app.post("/api/login", (req, res) => {
   } else {
     res.status(401).json({ success: false, error: "Invalid password" });
   }
+});
+
+app.get("/version", (req, res) => {
+  return res.json({
+    success: true,
+    message: "career application ai studio",
+    build: "003",
+  });
 });
 
 async function startServer() {
