@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { GoogleGenAI } from '@google/genai';
 import { cleanJsonResponse } from '../utils/helpers';
 import { generateFallbackPackage } from '../services/fallbackService';
-import { env } from '../env';
+import { env } from "../config/env";
 
 export const generateCareerPackage = async (req: Request, res: Response): Promise<any> => {
   try {

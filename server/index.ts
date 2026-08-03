@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import careerPackageRoutes from "./routes/careerPackageRoutes";
-import { env } from "./env";
+import { env } from "./config/env";
 
 
 const app = express(); 
@@ -10,6 +10,15 @@ const app = express();
 app.use(express.json({ limit: "10mb" }));
 
 app.use("/api/generate-career-package", careerPackageRoutes);
+
+app.post("/api/login", (req, res) => {
+  const { password } = req.body;
+  if (password === env.APP_PASSWORD) {
+    res.json({ success: true });
+  } else {
+    res.status(401).json({ success: false, error: "Invalid password" });
+  }
+});
 
 async function startServer() {
   if (env.NODE_ENV !== "production") {

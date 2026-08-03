@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
-import { SampleJD } from '../../types';
+import { SampleJD } from '../types';
 
 interface JobInputSectionProps {
   onGenerate: (company: string, position: string, jdText: string) => void;
